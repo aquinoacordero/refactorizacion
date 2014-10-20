@@ -1,4 +1,5 @@
 package refactorizar;
+import java.util.Scanner;
 
 public class Refactorizar {
 
@@ -6,12 +7,11 @@ public class Refactorizar {
         boolean primo = false;
         int max_min = 0;
         int contadorDigitos = 0;
- 
-        max_min = 3;
-        if (max_min <= 0) {
-            System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+        max_min = entradaDato();
+        if (max_min <= 6) {
+            System.out.print("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
-        for (int i = 1; i <= 99999; i++) {
+        for (int i = 1; i <= 99999999; i++) {
             int divisionEntera = i;
 
             int contador = 0;
@@ -57,6 +57,14 @@ public class Refactorizar {
                 }
             }
         }
+    }
+
+    private static int entradaDato() {
+        int max_min;
+        Scanner valor = new Scanner(System.in);
+        System.out.print("introducir valor: ");
+        max_min = valor.nextInt();
+        return max_min;
     }
 
 }
